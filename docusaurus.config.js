@@ -8,13 +8,13 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-    title: 'M3101',
-    tagline: 'Полезные ссылки группы M3101 ИТМО',
+    title: 'M31xx',
+    tagline: 'Полезные ссылки группы M31xx ИТМО',
     favicon: 'img/favicon.ico',
     trailingSlash: false,
 
     // Set the production url of your site here
-    url: 'https://m3101.nawinds.dev',
+    url: 'https://m31xx.nawinds.dev',
     // Set the /<baseUrl>/ pathname under which your site is served
     // For GitHub pages deployment, it is often '/<projectName>/'
     baseUrl: '/',
@@ -22,7 +22,7 @@ const config = {
     // GitHub pages deployment config.
     // If you aren't using GitHub pages, you don't need these.
     organizationName: 'nawinds', // Usually your GitHub org/user name.
-    projectName: 'm3101-links', // Usually your repo name.
+    projectName: 'm31xx-links', // Usually your repo name.
 
     onBrokenLinks: 'throw',
     onBrokenMarkdownLinks: 'warn',
@@ -150,16 +150,16 @@ const config = {
                         title: 'Контакты',
                         items: [
                             {
-                                label: 'm3101@nawinds.dev',
-                                href: 'mailto:m3101@nawinds.dev',
+                                label: 'm31xx@nawinds.dev',
+                                href: 'mailto:m31xx@nawinds.dev',
                             },
                             {
                                 label: 'Исходный код',
-                                href: 'https://github.com/nawinds/m3101-links',
+                                href: 'https://github.com/nawinds/m31xx-links',
                             },
                             {
                                 label: 'Внесли вклад',
-                                href: 'https://github.com/nawinds/m3101-links/graphs/contributors',
+                                href: 'https://github.com/nawinds/m31xx-links/graphs/contributors',
                             },
                         ],
                     },
@@ -215,14 +215,7 @@ const config = {
                     },
                 ],
             },
-        ],
-        [
-            '@docusaurus/plugin-google-gtag',
-            {
-                trackingID: 'G-RHPVMB4HZC',
-                anonymizeIP: false,
-            },
-        ],
+        ]
     ],
     customFields: {
         licenseKey: process.env.LICENSE_KEY,
