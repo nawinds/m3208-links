@@ -141,6 +141,10 @@ const config = {
                                 href: 'https://isu.ifmo.ru',
                             },
                             {
+                                label: 'Бронирования',
+                                href: 'https://isu.ifmo.ru/pls/apex/f?p=2431:4',
+                            },
+                            {
                                 label: 'BARS',
                                 href: 'https://bars.itmo.ru',
                             },
@@ -215,7 +219,7 @@ const config = {
                     },
                 ],
             },
-        ]
+        ],
     ],
     customFields: {
         licenseKey: process.env.LICENSE_KEY,
