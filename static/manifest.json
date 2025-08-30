@@ -1,6 +1,6 @@
 {
-  "name": "Ссылки M31xx",
-  "short_name": "M31xx",
+  "name": "Ссылки M3208",
+  "short_name": "M3208",
   "description": "Быстрый доступ к учебным материалам, актуальным дедлайнам и оценкам.",
   "categories": [
     "education",
@@ -66,18 +66,6 @@
     {
       "name": "Ведомости",
       "url": "/table-grades"
-    },
-    {
-      "name": "Правила оценивания",
-      "url": "/point-distribution"
-    },
-    {
-      "name": "Лекции",
-      "url": "https://t.me/+_GAv-z_aZplhYmEy"
-    },
-    {
-      "name": "Архив: Семестр 1",
-      "url": "/archive/semester/1"
     }
   ]
 }

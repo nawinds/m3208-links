@@ -48,7 +48,7 @@ const formatDeadline = (deadline) => {
 
     let deadlineName = deadline.name.replace("[Тест]", "📚").replace("[тест]", "📚");
     const formattedTime = formatUnixTimeIntoGCalTime(unixTimeDeadline);
-    const description = "Дедлайн добавлен с сайта m31xx.nawinds.dev";
+    const description = "Дедлайн добавлен с сайта m3208.nawinds.dev";
     const link = deadline.url;
     const gcalLink = `https://calendar.google.com/calendar/u/0/r/eventedit?text=${encodeURIComponent(deadlineName)}&dates=${formattedTime}/${formattedTime}&details=${encodeURIComponent(description)}&color=6`;
 

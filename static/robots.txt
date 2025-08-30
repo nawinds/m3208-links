@@ -1,8 +1,6 @@
 User-agent: *
 Disallow: /docs
-Disallow: /maths
 Disallow: /deadlines-editing-instructions
 Disallow: /deadlines-block
-Disallow: /lgd.pdf
 
-Sitemap: https://m31xx.nawinds.dev/sitemap.xml
+Sitemap: https://m3208.nawinds.dev/sitemap.xml

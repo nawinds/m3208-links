@@ -1,6 +1,6 @@
-# Сайт полезных ссылок группы M31xx Университета ИТМО — [M31xx.nawinds.dev](https://m31xx.nawinds.dev)
+# Сайт полезных ссылок группы M3208 Университета ИТМО — [M3208.nawinds.dev](https://m3208.nawinds.dev)
 
-### Useful links website for M31xx group @ ITMO University — [M31xx.nawinds.dev](https://m31xx.nawinds.dev)
+### Useful links website for M3208 group @ ITMO University — [M3208.nawinds.dev](https://m3208.nawinds.dev)
 
 ---
 
@@ -186,7 +186,7 @@ If you are using GitHub Pages for hosting, this command is a convenient way to b
 Переключение темы поддерживается на всех версиях сайта.
 
 ### Генерация лицензионного ключа
-Чтобы активировать сайт, размещенный на GitHub Pages, необходимо использовать актуальный лицензионный ключ. О том, как его сгенерировать, можно прочитать в [этом приватном репозитории](https://github.com/nawinds/m3104-links-license-generator). Всем, у кого нет к нему доступа, нужно обратиться ко [мне](https://t.me/nawinds) для активации сайта.
+Чтобы активировать сайт, размещенный на GitHub Pages, необходимо использовать актуальный лицензионный ключ. О том, как его сгенерировать, можно прочитать в [этом приватном репозитории](https://github.com/nawinds/m3204-links-license-generator). Всем, у кого нет к нему доступа, нужно обратиться ко [мне](https://t.me/nawinds) для активации сайта.
 
 ## Поддержать проект
 

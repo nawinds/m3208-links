@@ -8,13 +8,13 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-    title: 'M31xx',
-    tagline: 'Полезные ссылки группы M31xx ИТМО',
+    title: 'M3208',
+    tagline: 'Полезные ссылки группы M3208 ИТМО',
     favicon: 'img/favicon.ico',
     trailingSlash: false,
 
     // Set the production url of your site here
-    url: 'https://m31xx.nawinds.dev',
+    url: 'https://m3208.nawinds.dev',
     // Set the /<baseUrl>/ pathname under which your site is served
     // For GitHub pages deployment, it is often '/<projectName>/'
     baseUrl: '/',
@@ -22,7 +22,7 @@ const config = {
     // GitHub pages deployment config.
     // If you aren't using GitHub pages, you don't need these.
     organizationName: 'nawinds', // Usually your GitHub org/user name.
-    projectName: 'm31xx-links', // Usually your repo name.
+    projectName: 'm3208-links', // Usually your repo name.
 
     onBrokenLinks: 'throw',
     onBrokenMarkdownLinks: 'warn',
@@ -98,23 +98,10 @@ const config = {
                         href: '/table-grades',
                     },
                     {
-                        label: 'Правила оценивания',
-                        href: '/point-distribution',
-                    },
-                    {
-                        label: 'Лекции',
-                        to: 'https://t.me/+_GAv-z_aZplhYmEy',
-                    },
-                    {
                         type: 'dropdown',
                         label: 'Архив',
                         position: 'left',
-                        items: [
-                            {
-                                label: 'Семестр 1',
-                                href: '/archive/semester/1',
-                            }
-                        ],
+                        items: [],
                     },
                     // {
                     //     type: 'html',
@@ -154,16 +141,16 @@ const config = {
                         title: 'Контакты',
                         items: [
                             {
-                                label: 'm31xx@nawinds.dev',
-                                href: 'mailto:m31xx@nawinds.dev',
+                                label: 'm3208@nawinds.dev',
+                                href: 'mailto:m3208@nawinds.dev',
                             },
                             {
                                 label: 'Исходный код',
-                                href: 'https://github.com/nawinds/m31xx-links',
+                                href: 'https://github.com/nawinds/m3208-links',
                             },
                             {
                                 label: 'Внесли вклад',
-                                href: 'https://github.com/nawinds/m31xx-links/graphs/contributors',
+                                href: 'https://github.com/nawinds/m3208-links/graphs/contributors',
                             },
                         ],
                     },
