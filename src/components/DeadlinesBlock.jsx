@@ -54,7 +54,7 @@ const formatDeadline = (deadline) => {
 
     let text = "";
     if (link) {
-        text += `<b style="position: relative; display: inline-block;"><a href="${link}" target="_blank" title="Открыть ${deadlineName}" style="text-decoration: none; color: inherit; position: relative; z-index: 1;" onmouseover="this.parentNode.querySelector('span').style.height='2px'" onmouseout="this.parentNode.querySelector('span').style.height='1px'" onclick="ym(${ym_counter}, 'reachGoal', 'deadline_click'); return true;">${deadlineName}</a>
+        text += `<b style="position: relative; display: inline-block;"><a href="${link}" target="_blank" title="Открыть ${deadlineName}" style="text-decoration: none; color: inherit; position: relative; z-index: 1;" onmouseover="this.parentNode.querySelector('span').style.height='2px'" onmouseout="this.parentNode.querySelector('span').style.height='1px'">${deadlineName}</a>
                  <span style="position: absolute; bottom: 2px; left: 0; right: 0; height: 1px; background: rgba(157,128,218,0.6); z-index: 0; transition: height 0.1s ease;"></span></b>`;
     } else {
         text += `<b>${deadlineName}</b>`;
