@@ -98,11 +98,15 @@ const config = {
                         href: '/table-grades',
                     },
                     {
-                        type: 'dropdown',
-                        label: 'Архив',
-                        position: 'left',
-                        items: [],
+                        label: 'Правила оценивания',
+                        href: '/point-distribution',
                     },
+                    // {
+                    //     type: 'dropdown',
+                    //     label: 'Архив',
+                    //     position: 'left',
+                    //     items: [],
+                    // },
                     // {
                     //     type: 'html',
                     //     position: 'right',
