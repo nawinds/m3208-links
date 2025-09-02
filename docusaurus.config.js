@@ -211,6 +211,13 @@ const config = {
                 ],
             },
         ],
+        [
+            '@docusaurus/plugin-google-gtag',
+            {
+                trackingID: 'G-SRZVPF69CF',
+                anonymizeIP: false,
+            },
+        ],
     ],
     customFields: {
         licenseKey: process.env.LICENSE_KEY,
