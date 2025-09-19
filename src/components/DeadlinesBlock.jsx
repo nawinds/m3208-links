@@ -40,12 +40,12 @@ function stripLecturerFromName(name, filters) {
     Object.values(f.aliases || {}).forEach(aliasList => {
       aliasList.forEach(alias => {
         // ищем "(Пригодич)" или "(пригодич)" без учёта регистра
-        const regex = new RegExp(`\\(\\s*${alias}\\s*\\)`, 'i');
-        cleaned = cleaned.replace(regex, '').trim();
+        //const regex = new RegExp(`\\(\\s*${alias}\\s*\\)`, 'i');
+        //cleaned = cleaned.replace(regex, '').trim();
       });
     });
   });
-  cleaned = cleaned.replace(/\s+([:;,.!?])/g, '$1');
+  //cleaned = cleaned.replace(/\s+([:;,.!?])/g, '$1');
   return cleaned.trim();
 }
 
@@ -65,6 +65,10 @@ const formatDeadline = (deadline, lecturerFilters) => {
     const deltaMinutesSDays = deltaMinutes - 60 * Math.floor(deltaHours);
 
     let deadlineName = deadline.name.replace("[Тест]", "📚").replace("[тест]", "📚");
+    deadlineName = deadlineName.replace("[Лекция]", "👨‍🏫").replace("[лекция]", "👨‍🏫");
+    deadlineName = deadlineName.replace("[Защита]", "🛡").replace("[защита]", "🛡");
+    deadlineName = deadlineName.replace("[Экзамен]", "🤓").replace("[экзамен]", "🤓");
+    deadlineName = deadlineName.replace("[Консультация]", "👞").replace("[консультация]", "👞");
     deadlineName = stripLecturerFromName(deadlineName, lecturerFilters);
 
 
@@ -75,8 +79,7 @@ const formatDeadline = (deadline, lecturerFilters) => {
 
     let text = "";
     if (link) {
-        text += `<b style="position: relative; display: inline-block;"><a href="${link}" target="_blank" title="Открыть ${deadlineName}" style="text-decoration: none; color: inherit; position: relative; z-index: 1;" onmouseover="this.parentNode.querySelector('span').style.height='2px'" onmouseout="this.parentNode.querySelector('span').style.height='1px'">${deadlineName}</a>
-                 <span style="position: absolute; bottom: 2px; left: 0; right: 0; height: 1px; background: rgba(157,128,218,0.6); z-index: 0; transition: height 0.1s ease;"></span></b>`;
+        text += `<b style="padding-left: 5px; border-left: 2px solid rgba(157,128,218,0.5);"><a href=\"${link}\" target=\"_blank\" title="Открыть ${deadlineName}" style=\"text-decoration: none; color: inherit;\" onmouseover=\"this.style.opacity='0.8'\" onmouseout=\"this.style.opacity='1'\" onclick="ym(${ym_counter}, 'reachGoal', 'deadline_click'); return true;">${deadlineName}</a></b>`;
     } else {
         text += `<b>${deadlineName}</b>`;
     }
