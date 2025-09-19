@@ -4,43 +4,75 @@ description: Ссылки на ведомости группы M3208 по каж
 ---
 
 import BackButton from '@site/src/components/BackButton';
+import LecturersProvider from '@site/src/components/lecturers/LecturersProvider';
+import LecturerMatrixButton from '@site/src/components/lecturers/LecturerMatrixButton';
+import WhenLecturer from '@site/src/components/lecturers/WhenLecturer';
 import GradesTableLink from '@site/src/components/GradesTableLink';
 import EditPageLink from '@site/src/components/EditPageLink';
-
-import TabItem from "@theme/TabItem";
-import PersistentTabs from '@site/src/components/PersistentTabs';
 
 <BackButton />
 
 # Баллы по всем предметам
 
+<LecturersProvider
+    initial={{history: 'prigodich', publicSpeaking: 'limonova'}}
+    cookieKeys={{
+        history: 'tab_history-lecturers',
+        publicSpeaking: 'tab_public-speaking-lecturers',
+    }}
+>
 
-<!--<GradesTableLink title="Дополнительные главы высшей математики" url="#" shortcutKeys={['d', 'д', 'в', 'l']} />-->
-<!--<GradesTableLink title="Теория вероятности" url="#" shortcutKeys={['t', 'т', 'е', 'n']} />-->
-<GradesTableLink title="Физика" url="https://docs.google.com/spreadsheets/d/1aG80UK9IFCOVYT-jlzAAs1GODuwlebOQa9N45P7fT9A/edit?usp=sharing" shortcutKeys={['f', 'ф', 'а', 'a']} />
-<!--<GradesTableLink title="Базы данных" url="#" shortcutKeys={['b', 'б', 'и', ',']} />-->
-<GradesTableLink title="Объектно-ориентированное программирование" url="https://docs.google.com/spreadsheets/d/1IyU7pLBKrUuZOmWRZn3TRRSNiVgioEhnfAVIr4Qlh5g/edit?gid=0#gid=0&range=A104" shortcutKeys={['o', 'о', 'щ', 'j']} />
+    <LecturerMatrixButton
+        subjects={[
+            {
+                id: 'history',
+                title: 'История',
+                options: [
+                    {value: 'prigodich', label: 'Пригодич'},
+                    {value: 'other', label: 'Другой лектор'},
+                ]
+            },
+            {
+                id: 'publicSpeaking',
+                title: 'ТПВ',
+                options: [
+                    {value: 'limonova', label: 'Лимонова'},
+                    {value: 'other', label: 'Другой лектор'},
+                ],
+            },
+        ]}
+    />
 
-<PersistentTabs groupId="history-lecturers" defaultValue="prigodich">
-  <TabItem value="prigodich" label="Пригодич">
-    <GradesTableLink title="История" url="https://docs.google.com/spreadsheets/d/1j2RmIFyQhdzfFyFqEQnBmUISlvYN4bRKvQp1lO1oCxk/edit?usp=sharing" shortcutKeys={['и', 'h', 'р', 'b']} />
-  </TabItem>
-  <TabItem value="vicherov" label="Вычеров">
-    <EditPageLink filePath="/src/pages/table-grades.mdx" linkText="Добавить ссылку на ведомость" deadlinesEdit={true} />
-  </TabItem>
-  <TabItem value="others" label="Другие лекторы">
-    <EditPageLink filePath="/src/pages/table-grades.mdx" linkText="Добавить информацию об этом курсе" deadlinesEdit={true} />
-  </TabItem>
-</PersistentTabs>
+    <!--<GradesTableLink title="Дополнительные главы высшей математики" url="#" shortcutKeys={['d', 'д', 'в', 'l']} />-->
+    <!--<GradesTableLink title="Теория вероятности" url="#" shortcutKeys={['t', 'т', 'е', 'n']} />-->
+    <GradesTableLink title="Физика" url="https://docs.google.com/spreadsheets/d/1aG80UK9IFCOVYT-jlzAAs1GODuwlebOQa9N45P7fT9A/edit?usp=sharing" shortcutKeys={['f', 'ф', 'а', 'a']} />
+    <!--<GradesTableLink title="Базы данных" url="#" shortcutKeys={['b', 'б', 'и', ',']} />-->
+    <GradesTableLink title="Объектно-ориентированное программирование" url="https://docs.google.com/spreadsheets/d/1IyU7pLBKrUuZOmWRZn3TRRSNiVgioEhnfAVIr4Qlh5g/edit?gid=0#gid=0&range=A104" shortcutKeys={['o', 'о', 'щ', 'j']} />
 
-<PersistentTabs groupId="public-speaking-lecturers" defaultValue="limonova">
-  <TabItem value="limonova" label="Лимонова">
-    <GradesTableLink title="Техники публичных выступлений" url="https://docs.google.com/spreadsheets/d/1-PM2MM9zsXZs1uYZFQcQwk5goTmPT9aepLaPUqah1rc/edit?usp=sharing" shortcutKeys={['т', 't', 'е', 'n']} />
-  </TabItem>
-  <TabItem value="others" label="Другие лекторы">
-    <EditPageLink filePath="/src/pages/table-grades.mdx" linkText="Добавить информацию об этом курсе" deadlinesEdit={true} />
-  </TabItem>
-</PersistentTabs>
 
-<EditPageLink filePath="/src/pages/table-grades.mdx" />
+    {/* История */}
+    <WhenLecturer subjectId="history" value="prigodich">
+        <GradesTableLink
+            title="История (Пригодич)"
+            url="https://docs.google.com/spreadsheets/d/1j2RmIFyQhdzfFyFqEQnBmUISlvYN4bRKvQp1lO1oCxk/edit?usp=sharing"
+            shortcutKeys={['и', 'h', 'р', 'b']}
+        />
+    </WhenLecturer>
 
+    <WhenLecturer subjectId="history" value="other">
+    </WhenLecturer>
+
+    {/* ТПВ */}
+    <WhenLecturer subjectId="publicSpeaking" value="limonova">
+        <GradesTableLink
+            title="ТПВ (Лимонова)"
+            url="https://docs.google.com/spreadsheets/d/1v3cq9jPR6Khd004ocL5LUTKDVy-hTqvJUadr3J2EwEA/edit?gid=2138842551#gid=2138842551"
+            shortcutKeys={['т', 't', 'е', 'n']}
+        />
+    </WhenLecturer>
+
+    <WhenLecturer subjectId="publicSpeaking" value="other">
+    </WhenLecturer>
+
+    <EditPageLink filePath="/src/pages/table-grades.mdx"/>
+</LecturersProvider>

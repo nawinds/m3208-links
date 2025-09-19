@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import {useLocation} from "@docusaurus/router";
+import PropTypes from 'prop-types';
+
 
 const DEADLINES_URL = "/DEADLINES.json";
 
@@ -31,7 +32,24 @@ const formatUnixTimeIntoGCalTime = (unixTimeDeadline) => {
     return `${year}${month}${day}T${hours}${minutes}${seconds}${sign}${offsetHours}${offsetMinutes}`;
 };
 
-const formatDeadline = (deadline) => {
+function stripLecturerFromName(name, filters) {
+  if (!filters || filters.length === 0) return name;
+
+  let cleaned = name;
+  filters.forEach(f => {
+    Object.values(f.aliases || {}).forEach(aliasList => {
+      aliasList.forEach(alias => {
+        // ищем "(Пригодич)" или "(пригодич)" без учёта регистра
+        const regex = new RegExp(`\\(\\s*${alias}\\s*\\)`, 'i');
+        cleaned = cleaned.replace(regex, '').trim();
+      });
+    });
+  });
+  cleaned = cleaned.replace(/\s+([:;,.!?])/g, '$1');
+  return cleaned.trim();
+}
+
+const formatDeadline = (deadline, lecturerFilters) => {
     const {siteConfig} = useDocusaurusContext();
 
     const unixTimeDeadline = Date.parse(deadline.time);
@@ -47,6 +65,9 @@ const formatDeadline = (deadline) => {
     const deltaMinutesSDays = deltaMinutes - 60 * Math.floor(deltaHours);
 
     let deadlineName = deadline.name.replace("[Тест]", "📚").replace("[тест]", "📚");
+    deadlineName = stripLecturerFromName(deadlineName, lecturerFilters);
+
+
     const formattedTime = formatUnixTimeIntoGCalTime(unixTimeDeadline);
     const description = "Дедлайн добавлен с сайта m3208.nawinds.dev";
     const link = deadline.url;
@@ -69,12 +90,53 @@ const formatDeadline = (deadline) => {
     } else {
         text += `${Math.floor(deltaDays)} ${Math.floor(deltaDays) === 3 || Math.floor(deltaDays) === 4 ? "дня" : "дней"}`;
     }
-    const options = { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit', weekday: 'short' };
+    const options = {month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit', weekday: 'short'};
     text += ` (${new Date(unixTimeDeadline).toLocaleDateString('ru-RU', options)}) </a>`;
     return text;
 };
 
-const Deadlines = () => {
+function readCookie(name) {
+    if (typeof document === 'undefined') return undefined;
+    const m = document.cookie.match(
+        new RegExp('(?:^|; )' + name.replace(/([.$?*|{}()[\]\\/+^])/g, '\\$1') + '=([^;]*)')
+    );
+    return m ? decodeURIComponent(m[1]) : undefined;
+}
+
+function cookieSignature(filters) {
+    if (!filters || filters.length === 0) return '';
+    return filters
+        .map(f => `${f.cookie}=${readCookie(f.cookie) || ''}`)
+        .join('|');
+}
+
+
+function isDeadlineRelevantByLecturer(deadlineName, filters) {
+    if (!filters || filters.length === 0) return true; // без фильтра — показываем всё
+    const name = String(deadlineName || '').toLowerCase();
+
+    for (const f of filters) {
+        const isSubject = (f.keywords || []).some(k => name.includes(String(k).toLowerCase()));
+        if (!isSubject) continue;
+
+        const selected = readCookie(f.cookie); // напр. 'prigodich'
+        if (!selected) return true; // выбора нет — не фильтруем
+
+        const aliasesByLect = f.aliases || {};
+        let mentioned = null;
+        for (const [lect, aliasList] of Object.entries(aliasesByLect)) {
+            if ((aliasList || []).some(a => name.includes(String(a).toLowerCase()))) {
+                mentioned = lect;
+                break;
+            }
+        }
+        if (mentioned && mentioned !== selected) return false; // фамилия указана и не совпала
+    }
+    return true; // предмет не распознали или фамилии нет
+}
+
+
+const Deadlines = ({lecturerFilters}) => {
     const [deadlines, setDeadlines] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -84,7 +146,10 @@ const Deadlines = () => {
             try {
                 const data = await fetchDeadlines();
                 const sortedDeadlines = data.deadlines.sort(compareDeadlines);
-                setDeadlines(sortedDeadlines);
+                const filtered = sortedDeadlines.filter(d =>
+                    isDeadlineRelevantByLecturer(d.name, lecturerFilters)
+                );
+                setDeadlines(filtered);
             } catch (err) {
                 setError(err.message);
             } finally {
@@ -102,11 +167,25 @@ const Deadlines = () => {
                 loadDeadlines();
                 setInterval(loadDeadlines, 60000); // Every 60 seconds
             }, delay);
+
+            let lastSig = cookieSignature(lecturerFilters);
+            const checkCookies = () => {
+                const sig = cookieSignature(lecturerFilters);
+                if (sig !== lastSig) {
+                    lastSig = sig;
+                    loadDeadlines(); // куки поменялись — перезагрузить список
+                }
+            };
+
+            const cookieTimer = setInterval(checkCookies, 1500);
+            window.addEventListener('focus', checkCookies);
+            document.addEventListener('visibilitychange', checkCookies);
+
         };
 
         loadDeadlines();
         updateInterval();
-    }, []);
+    }, [lecturerFilters]);
 
     if (loading) {
         return <p>Загрузка дедлайнов...</p>;
@@ -116,16 +195,27 @@ const Deadlines = () => {
         return <p>Не удалось загрузить дедлайны.</p>;
     }
     return (
-        <div id="deadlinesBlock" style={{ marginBottom: '20px' }}>
+        <div id="deadlinesBlock" style={{marginBottom: '20px'}}>
             <h2>Дедлайны</h2>
             {deadlines.length === 0 ? (
                 <p>Нет предстоящих дедлайнов.</p>
             ) : (
-                <p dangerouslySetInnerHTML={{ __html: deadlines.map(formatDeadline).filter(Boolean).join('<br>') }} style={{ lineHeight: "1.8em" }} />
+                <p dangerouslySetInnerHTML={{__html: deadlines.map(d => formatDeadline(d, lecturerFilters)).filter(Boolean).join('<br>')}}
+                   style={{lineHeight: "1.8em"}}/>
             )}
             <a href="/deadlines-editing-instructions">Добавить дедлайн</a>
         </div>
     );
+};
+
+Deadlines.propTypes = {
+    lecturerFilters: PropTypes.arrayOf(
+        PropTypes.shape({
+            cookie: PropTypes.string.isRequired,
+            keywords: PropTypes.arrayOf(PropTypes.string).isRequired,
+            aliases: PropTypes.objectOf(PropTypes.arrayOf(PropTypes.string)).isRequired,
+        })
+    ),
 };
 
 export default Deadlines;
