@@ -18,5 +18,26 @@ import EditPageLink from '@site/src/components/EditPageLink';
 <!--<GradesTableLink title="Базы данных" url="#" shortcutKeys={['b', 'б', 'и', ',']} />-->
 <GradesTableLink title="Объектно-ориентированное программирование" url="https://docs.google.com/spreadsheets/d/1IyU7pLBKrUuZOmWRZn3TRRSNiVgioEhnfAVIr4Qlh5g/edit?gid=0#gid=0&range=A104" shortcutKeys={['o', 'о', 'щ', 'j']} />
 
+<PersistentTabs groupId="history-lecturers" defaultValue="prigodich">
+  <TabItem value="prigodich" label="Пригодич">
+    <GradesTableLink title="История" url="https://docs.google.com/spreadsheets/d/1j2RmIFyQhdzfFyFqEQnBmUISlvYN4bRKvQp1lO1oCxk/edit?usp=sharing" shortcutKeys={['и', 'h', 'р', 'b']} />
+  </TabItem>
+  <TabItem value="vicherov" label="Вычеров">
+    <EditPageLink filePath="/src/pages/table-grades.mdx" linkText="Добавить ссылку на ведомость" deadlinesEdit={true} />
+  </TabItem>
+  <TabItem value="others" label="Другие лекторы">
+    <EditPageLink filePath="/src/pages/table-grades.mdx" linkText="Добавить информацию об этом курсе" deadlinesEdit={true} />
+  </TabItem>
+</PersistentTabs>
+
+<PersistentTabs groupId="public-speaking-lecturers" defaultValue="limonova">
+  <TabItem value="limonova" label="Лимонова">
+    <GradesTableLink title="Техники публичных выступлений" url="https://docs.google.com/spreadsheets/d/1-PM2MM9zsXZs1uYZFQcQwk5goTmPT9aepLaPUqah1rc/edit?usp=sharing" shortcutKeys={['т', 't', 'е', 'n']} />
+  </TabItem>
+  <TabItem value="others" label="Другие лекторы">
+    <EditPageLink filePath="/src/pages/table-grades.mdx" linkText="Добавить информацию об этом курсе" deadlinesEdit={true} />
+  </TabItem>
+</PersistentTabs>
+
 <EditPageLink filePath="/src/pages/table-grades.mdx" />
 
