@@ -29,7 +29,8 @@ import EditPageLink from '@site/src/components/EditPageLink';
                 title: 'История',
                 options: [
                     {value: 'prigodich', label: 'Пригодич'},
-                    {value: 'other', label: 'Другой лектор'},
+                    {value: 'pavlovskaya', label: 'Павловская'},
+                    {value: 'other', label: 'Другой поток'},
                 ]
             },
             {
@@ -37,7 +38,7 @@ import EditPageLink from '@site/src/components/EditPageLink';
                 title: 'ТПВ',
                 options: [
                     {value: 'limonova', label: 'Лимонова'},
-                    {value: 'other', label: 'Другой лектор'},
+                    {value: 'other', label: 'Другой поток'},
                 ],
             },
         ]}
@@ -54,7 +55,15 @@ import EditPageLink from '@site/src/components/EditPageLink';
     <WhenLecturer subjectId="history" value="prigodich">
         <GradesTableLink
             title="История (Пригодич)"
-            url="https://docs.google.com/spreadsheets/d/1j2RmIFyQhdzfFyFqEQnBmUISlvYN4bRKvQp1lO1oCxk/edit?usp=sharing"
+            url="https://docs.google.com/spreadsheets/d/1j2RmIFyQhdzfFyFqEQnBmUISlvYN4bRKvQp1lO1oCxk/edit?gid=646964733#gid=646964733"
+            shortcutKeys={['и', 'h', 'р', 'b']}
+        />
+    </WhenLecturer>
+
+    <WhenLecturer subjectId="history" value="pavlovskaya">
+        <GradesTableLink
+            title="История (Павловская)"
+            url="https://docs.google.com/spreadsheets/d/1j2RmIFyQhdzfFyFqEQnBmUISlvYN4bRKvQp1lO1oCxk/edit?gid=1255579626#gid=1255579626"
             shortcutKeys={['и', 'h', 'р', 'b']}
         />
     </WhenLecturer>

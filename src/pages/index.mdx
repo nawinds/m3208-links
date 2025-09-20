@@ -134,7 +134,10 @@ import PersistentTabs from '@site/src/components/PersistentTabs';
       - [6 сентября](https://t.me/c/3031387394/2/88) (до 14 сентября)
         - [Лекция](https://vkvideo.ru/video-173643328_456239083?list=ln-YzqgXpKgyEo365kJdp)
   </TabItem>
-  <TabItem value="other" label="Другие лекторы">
+  <TabItem value="pavlovskaya" label="Павловская">
+    <EditPageLink filePath="/src/pages/index.mdx" linkText="Добавить информацию об этом курсе" deadlinesEdit={true} />
+  </TabItem>
+  <TabItem value="other" label="Другие">
     <EditPageLink filePath="/src/pages/index.mdx" linkText="Добавить информацию об этом курсе" deadlinesEdit={true} />
   </TabItem>
 
@@ -144,12 +147,14 @@ import PersistentTabs from '@site/src/components/PersistentTabs';
 
 <PersistentTabs groupId="public-speaking-lecturers" defaultValue="limonova">
   <TabItem value="limonova" label="Лимонова">
-
+      [Валерия Лимонова](vlimonova.itmo@gmail.com), [Степан Малышко](https://t.me/Mlkstep)
+      - [Плейлист лекций ТПВ](https://www.youtube.com/playlist?list=PLYWinHc8HXR1GB1CYLndkmQ0cHExCZlsu)
+      - [Орг. информация по курсу](/files/public_speaking/org_info.pdf)
+      - [Разбалловка](/point-distribution)
   </TabItem>
-  <TabItem value="other" label="Другие лекторы">
+  <TabItem value="other" label="Другие">
     <EditPageLink filePath="/src/pages/index.mdx" linkText="Добавить информацию об этом курсе" deadlinesEdit={true} />
   </TabItem>
-
 </PersistentTabs>
 
 import EditPageLink from '@site/src/components/EditPageLink';

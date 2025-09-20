@@ -31,7 +31,7 @@ export default function LecturerMatrixButton({subjects}: { subjects: Subject[] }
                     aria-expanded={open}
                     aria-controls="lecturer-matrix-popover"
                 >
-                    Лекторы • {subjects.length}
+                    Потоки • {subjects.length}
                     <span className={styles.chev} aria-hidden>▾</span>
                 </button>
 
@@ -127,7 +127,7 @@ function Popover({subjects, onClose}: { subjects: Subject[]; onClose: () => void
             className={styles.popover}
             style={style}
             role="dialog"
-            aria-label="Выбор лектора по предметам"
+            aria-label="Выбор потока"
         >
             <div
                 className={styles.columns}
