@@ -13,8 +13,12 @@
       "time": "15 Dec 2025 11:30:00 GMT+3"
     },
     {
-      "name": "[Тест] Допглавы: Тестирование на лекции?",
-      "time": "26 Dec 2025 15:30:00 GMT+3"
+      "name": "[Тест] Допглавы: Тестирование на лекции (ауд. 2304)",
+      "time": "24 Dec 2025 13:30:00 GMT+3"
+    },
+    {
+      "name": "[Тест] Теорвер: Тестирование на лекции",
+      "time": "17 Dec 2025 08:10:00 GMT+3"
     },
     {
       "name": "Допглавы: Типовой расчёт по рядам (Темы 5-8)",
@@ -25,9 +29,13 @@
       "time": "19 Dec 2025 15:30:00 GMT+3"
     },
     {
-      "name": "БД: Лаба 5",
-      "time": "28 Nov 2025 23:59:00 GMT+3",
-      "url": "https://info.sqlwars.ru/laboratory_works/lab_work_5/"
+      "name": "БД: Лаба 6",
+      "time": "12 Dec 2025 23:59:00 GMT+3",
+      "url": "https://info.sqlwars.ru/laboratory_works/lab_work_6/"
+    },
+    {
+      "name": "[Тест] БД: Рубежка",
+      "time": "28 Nov 2025 19:00:00 GMT+3"
     },
     {
       "name": "БД: Лаба 4",
@@ -35,9 +43,17 @@
       "url": "https://info.sqlwars.ru/laboratory_works/lab_work_4/"
     },
     {
-      "name": "Физика: Лаба №1.04",
-      "time": "25 Nov 2025 15:30:00 GMT+3",
-      "url": "https://study.physics.itmo.ru/course/section.php?id=1046"
+      "name": "Физика: Лаба",
+      "time": "16 Dec 2025 15:30:00 GMT+3",
+      "url": "https://study.physics.itmo.ru/course/section.php"
+    },
+    {
+      "name": "[Тест] Физика: КР",
+      "time": "23 Dec 2025 15:30:00 GMT+3"
+    },
+    {
+      "name": "Физика: Защита всего",
+      "time": "23 Dec 2025 15:30:00 GMT+3"
     },
     {
       "name": "Физика: Выч. практикум 1",
@@ -60,23 +76,23 @@
     },
     {
       "name": "История (Пригодич): Субботнее задание",
-      "time": "23 Nov 2025 23:59:00 GMT+3",
-      "url": "https://t.me/c/3031387394/2/208"
+      "time": "07 Dec 2025 23:59:00 GMT+3",
+      "url": "https://t.me/c/3031387394/2/223"
     },
     {
-      "name": "[Тест] ТПВ (Лимонова): ПА (очное выступление)",
-      "time": "19 Nov 2025 11:30:00 GMT+3",
-      "url": "https://t.me/c/2981712040/146"
+      "name": "ТПВ (Лимонова): ДЗ 4",
+      "time": "02 Dec 2025 11:30:00 GMT+3",
+      "url": "https://t.me/c/2981712040/267"
     },
     {
-      "name": "ООП: Лаба 2",
-      "time": "25 Oct 2025 23:59:00 GMT+3",
-      "url": "https://github.com/is-oop-y28/.github/blob/master/profile/labs/lab-2.md"
+      "name": "ООП: Лаба 4",
+      "time": "06 Dec 2025 23:59:00 GMT+3",
+      "url": "https://github.com/is-oop-y28/.github/blob/master/profile/labs/lab-4.md"
     },
     {
-      "name": "ООП: Лаба 3",
-      "time": "08 Nov 2025 23:59:00 GMT+3",
-      "url": "https://github.com/is-oop-y28/.github/blob/master/profile/labs/lab-3.md"
+      "name": "ООП: Лаба 5",
+      "time": "20 Dec 2025 23:59:00 GMT+3",
+      "url": "https://github.com/is-oop-y28/.github/blob/master/profile/labs/lab-5.md"
     }
   ]
 }
