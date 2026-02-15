@@ -101,12 +101,17 @@ const config = {
                         label: 'Правила оценивания',
                         href: '/point-distribution',
                     },
-                    // {
-                    //     type: 'dropdown',
-                    //     label: 'Архив',
-                    //     position: 'left',
-                    //     items: [],
-                    // },
+                    {
+                        type: 'dropdown',
+                        label: 'Архив',
+                        position: 'left',
+                        items: [
+                            {
+                                label: '3 семестр',
+                                href: '/archive/semester/3'
+                            }
+                        ],
+                    },
                     // {
                     //     type: 'html',
                     //     position: 'right',
