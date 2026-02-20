@@ -10,7 +10,13 @@
     },
     {
       "name": "Джава: Лаба 1",
-      "time": "28 Feb 2026 09:50:00 GMT+3"
+      "time": "28 Feb 2026 09:50:00 GMT+3",
+      "url": "https://github.com/is-tech-y28/.github/blob/main/profile/labs/lab-1.md"
+    },
+    {
+      "name": "КиК: Тесты",
+      "time": "01 Mar 2026 23:59:00 GMT+3",
+      "url": "https://softskills.itmo.ru/m/my/"
     },
     {
       "name": "[Экзамен] Физика",
