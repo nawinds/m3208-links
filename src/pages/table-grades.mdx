@@ -41,6 +41,14 @@ import EditPageLink from '@site/src/components/EditPageLink';
                     {value: 'other', label: 'Другой поток'},
                 ],
             },
+            {
+                id: 'english',
+                title: 'КиК',
+                options: [
+                    {value: 'andy', label: 'Andy Fredericks C2/1, Tue 8:10'},
+                    {value: 'other', label: 'Другой поток'},
+                ],
+            },
         ]}
     />
 
@@ -82,6 +90,18 @@ import EditPageLink from '@site/src/components/EditPageLink';
     </WhenLecturer>
 
     <WhenLecturer subjectId="kik" value="other">
+    </WhenLecturer>
+
+    {/* English */}
+    <WhenLecturer subjectId="english" value="andy">
+        <GradesTableLink
+            title="Английский C2/1 (Эндрю Фредерикс)"
+            url="#"
+            shortcutKeys={['а', 'a', 'ф', 'f']}
+        />
+    </WhenLecturer>
+
+    <WhenLecturer subjectId="english" value="other">
     </WhenLecturer>
 
     <EditPageLink filePath="/src/pages/table-grades.mdx"/>
