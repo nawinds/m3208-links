@@ -1,12 +1,12 @@
 {
   "deadlines": [
     {
-      "name": "[Тест] ОСи: Тесты 2 и 3",
-      "time": "4 Apr 2026 09:50:00 GMT+3"
+      "name": "[Тест] ОСи: Тест",
+      "time": "02 May 2026 09:50:00 GMT+3"
     },
     {
-      "name": "ОСи: Лаба 4",
-      "time": "18 Apr 2026 09:50:00 GMT+3"
+      "name": "ОСи: Лаба 5",
+      "time": "02 May 2026 09:50:00 GMT+3"
     },
     {
       "name": "Джава: Лаба 4",
@@ -24,9 +24,9 @@
       "url": "https://softskills.itmo.ru/m/my/"
     },
     {
-      "name": "ПБД: 3 этап",
-      "time": "5 Apr 2026 23:59:00 GMT+3",
-      "url": "https://info.sqlwars.ru/database_design/stages/stage-3/"
+      "name": "ПБД: 5 этап",
+      "time": "10 May 2026 23:59:00 GMT+3",
+      "url": "https://info.sqlwars.ru/database_design/stages/stage-5/"
     },
     {
       "name": "ПБД: 4 этап",
