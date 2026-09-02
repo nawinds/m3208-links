@@ -8,8 +8,8 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-    title: 'M3208',
-    tagline: 'Полезные ссылки группы M3208 ИТМО',
+    title: 'M3301',
+    tagline: 'Полезные ссылки группы M3301 ИТМО',
     favicon: 'img/favicon.ico',
     trailingSlash: false,
 

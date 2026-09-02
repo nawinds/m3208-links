@@ -1,6 +1,6 @@
-# Сайт полезных ссылок группы M3208 Университета ИТМО — [M3208.nawinds.dev](https://m3208.nawinds.dev)
+# Сайт полезных ссылок группы M3301 Университета ИТМО — [M3301.nawinds.dev](https://m3208.nawinds.dev)
 
-### Useful links website for M3208 group @ ITMO University — [M3208.nawinds.dev](https://m3208.nawinds.dev)
+### Useful links website for M3301 group @ ITMO University — [M3301.nawinds.dev](https://m3208.nawinds.dev)
 
 ---
 
