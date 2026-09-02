@@ -1,16 +1,15 @@
 ---
-title: Распределение баллов за 3 семестр
-description: Разбалловка по предметам и правила оценивания. Перевод баллов в оценки за 3 семестр
+title: Распределение баллов
+description: Разбалловка по предметам и правила оценивания. перевод баллов в оценки
 ---
 
 import BackButton from '@site/src/components/BackButton';
 import TabItem from "@theme/TabItem";
 import PersistentTabs from '@site/src/components/PersistentTabs';
 
-
 <BackButton title="Назад" to="/archive/semester/3"/>
 
-# Распределение баллов M3208 за 3 семестр
+# Распределение баллов M3208 за 4 семестр
 
 ## Оценки
 90.01+ – пятёрка <br />
@@ -116,4 +115,12 @@ import PersistentTabs from '@site/src/components/PersistentTabs';
 
       В конце семестра зачет/не зачет (без оценки). Нужно набрать 60 баллов для победы.
   </TabItem>
+  <TabItem value="other" label="Другие">
+    <EditPageLink filePath="/src/pages/point-distribution.mdx" linkText="Добавить информацию об этом курсе" deadlinesEdit={true} />
+  </TabItem>
 </PersistentTabs>
+
+
+import EditPageLink from '@site/src/components/EditPageLink';
+
+<EditPageLink filePath="/src/pages/point-distribution.mdx" />
